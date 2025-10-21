@@ -1,4 +1,10 @@
-References.txt
-Arthur J. Riel. 60 Design Heuristics for Object-Oriented Systems. 
-Available: https://homepages.ecs.vuw.ac.nz/~elvis/db/misc/rules.html.
-Accessed: October 20, 2025. Used for object-oriented design principles and heuristics.
+ChatGPT Usage:
+
+prompt -- Whats wrong with my code
+
+ChatGPT repsonse -- Your code looks really good — it correctly demonstrates method overloading 
+for different shapes, includes input validation, and has clear, readable output.
+However, there’s one structural issue:
+Your Main class is inside the AreaCalculator class. In Java, the main() method should normally
+be in its own separate file or top-level class, not nested inside another class.
+Here’s the corrected and simplified version:
