@@ -1,0 +1,4 @@
+References.txt
+Arthur J. Riel. 60 Design Heuristics for Object-Oriented Systems. 
+Available: https://homepages.ecs.vuw.ac.nz/~elvis/db/misc/rules.html.
+ Accessed: October 20, 2025. Used for object-oriented design principles and heuristics.
