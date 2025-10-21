@@ -1,0 +1,95 @@
+Question 1 ---------------------------------------------------------------------------------
+
+Internet references:
+Arthur J. Riel. 60 Design Heuristics for Object-Oriented Systems. 
+Available: https://homepages.ecs.vuw.ac.nz/~elvis/db/misc/rules.html.
+Accessed: October 20, 2025. Used for object-oriented design principles and heuristics.
+
+ChatGPT Usages:
+ Prompt-- polish my response to ensure clarity.
+ a) Should a well-designed class have high or low cohesion? Explain and defend your answer. (5 pts.)
+
+ A well-designed class should have high cohesion because its methhods and data focus on one 
+ clear purpose. This allows for the code to be easy to understand and maintain. 
+ A class with low cohesion tends to group unrelated functionalities together making 
+ code hard to undrtand and modify. According to Arthur Riel heuristics, a class 
+ should capture one and only one key abstraction, so high cohesion aligns directly 
+ with this. 
+ 
+ b) Based on your analysis, discuss—only if you believe changes are needed—how you would 
+ reorganize or redesign the class to improve its structure. Your answer should 
+ (1) identify the class as having high, low or perfect cohesion and 
+ (2) describe a general approach to refactoring the class. 
+ If you believe the class already has good cohesion, justify why no changes are necessary. 
+ (15 pts) (If you believe the class already has good cohesion, justify why no changes are 
+ necessary.) 
+ 
+ The StudentPortal Helper has low cohesion because the methods perform a wide range of tasks
+ such as GPA computation, CSV exporting, email formatting, date formatting, 
+ password validation, tuition payment, etc. to improve the cdesign, the class 
+ should be refactored into smaller classes that each focus on one purpose.
+ For example the class can be: AcademicService, Roster, Email, Payment, and Cache. 
+ With the different responsibilites, each class would have high cohesion and will be easier 
+ to maintian, modify, and be tested.
+ 
+ ChatGPT response -- Here’s your response cleaned up for clarity, grammar, and conciseness 
+ while keeping your own phrasing and tone:
+  
+ a)A well-designed class should have high cohesion because its methods and data focus on
+ one clear purpose. This makes the code easier to understand and maintain. A class with 
+ low cohesion groups unrelated functionalities together, making it harder to understand 
+ and modify. According to Arthur Riel’s heuristics, a class should capture one and only 
+ one key abstraction, so high cohesion aligns directly with this principle.
+ 
+ b)The StudentPortalHelper class has low cohesion because its methods perform a wide range 
+ of unrelated tasks such as GPA computation, CSV exporting, email formatting, date formatting,
+ password validation, tuition payment, and caching. To improve the design, the class should 
+ be refactored into smaller classes that each focus on a single purpose—for example: 
+ AcademicService, Roster, Email, Payment, and Cache. By dividing responsibilities, 
+ each class would have high cohesion and be easier to maintain, modify, and test.
+ 
+ 
+ 
+ Question 3 ---------------------------------------------------------------------------------
+ 
+ ChatGPT Usage:
+ Prompt-- explain what question 3 is asking me and how do i start answering the problem:
+ 
+ ChatGPT response -- Here’s a breakdown of what Question 3 is asking and how to approach it:
+What the question is asking
+Context:
+You have a Java program for a car manufacturer.
+Each Car can have a trim level: Base, Luxury, or Sport.
+Cars can have an engine type: electric or petrol.
+Customers may want to change the trim level at any time during the manufacturing process.
+Tasks:
+Analyze the current design (10 pts):
+Does the current class structure allow a car’s trim level to change dynamically (while the object exists)?
+You need to justify your answer using the UML design. For example: if Car has subclasses Base, 
+Luxury, Sport, then changing trim isn’t simple because you’d have to create a new object.
+
+Refactor the design to support dynamic trim changes (10 pts):
+Suggest a design change that allows a car to change its trim at runtime.
+The hint mentions composition: instead of using subclasses for each trim, the Car class 
+could have a TrimLevel field (object) that can be swapped.
+
+How to start answering
+Understand the current design:
+Look at the UML. Check if Car is subclassed for each trim (e.g., class Base extends Car).
+If it is, explain that changing the trim would require creating a new object, which is not dynamic.
+
+Explain why this is a problem:
+Inheritance is static; an object’s class cannot change at runtime.
+Data and behavior specific to trims are scattered in subclasses.
+Changing trims would require copying state from the old object to a new one.
+
+Propose a refactor using composition:
+Introduce a TrimLevel interface or abstract class.
+Implement concrete classes: BaseTrim, LuxuryTrim, SportTrim.
+Add a TrimLevel trim field in Car.
+Add a setTrimLevel(TrimLevel trim) method to allow swapping trims dynamically.
+This keeps Car flexible, follows good design principles (Open/Closed, Single Responsibility), 
+and allows runtime trim changes.
+
+Optional: Draw a small UML sketch of the new design or describe the classes textually.
+ 
