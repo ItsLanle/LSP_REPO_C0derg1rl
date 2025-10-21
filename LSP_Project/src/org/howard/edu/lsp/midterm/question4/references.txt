@@ -1,0 +1,5 @@
+References for Question 4:
+
+1. Howard University, LSP Midterm Question 4 instructions and provided code (Device.java, Main.java, interface specifications). 
+
+2. Oracle. Java Platform SE 17 Documentation. https://docs.oracle.com/en/java/javase/17/
